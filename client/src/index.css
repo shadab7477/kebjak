@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 220 14% 23%;
+
+    /* Kenjac’ Creations Brand colors */
+    --primary: 0 78% 71%;  /* Pink #FF6B6B */
+    --primary-foreground: 0 0% 100%; /* White for text on primary */
+    
+    --secondary: 174 59% 56%; /* Teal #4ECDC4 */
+    --secondary-foreground: 0 0% 100%; /* White for text on secondary */
+    
+    --accent: 43 100% 70%; /* Yellow #FFD166 */
+    --accent-foreground: 220 14% 23%; /* Dark text on accent */
+    
+    --dark: 210 9% 31%; /* Dark gray #495057 */
+    --light: 210 20% 98%; /* Light gray #F8F9FA */
+    
+    /* UI Component colors */
+    --muted: 210 20% 98%;
+    --muted-foreground: 220 8.9% 46.1%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 23%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 23%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --ring: 0 78% 71%;
+    
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --background: 220 14% 23%;
+    --foreground: 0 0% 98%;
+    
+    --primary: 0 78% 71%;  /* Pink #FF6B6B */
+    --primary-foreground: 0 0% 100%; /* White for text on primary */
+    
+    --secondary: 174 59% 56%; /* Teal #4ECDC4 */
+    --secondary-foreground: 0 0% 100%; /* White for text on secondary */
+    
+    --accent: 43 100% 70%; /* Yellow #FFD166 */
+    --accent-foreground: 220 14% 23%; /* Dark text on accent */
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --popover: 224 71% 4%;
+    --popover-foreground: 0 0% 98%;
+    
+    --card: 224 71% 4%;
+    --card-foreground: 0 0% 98%;
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --ring: 0 78% 71%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .accent-font {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-scale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .animate-pulse-scale {
+    animation: pulse-scale 2s ease-in-out infinite;
+  }
+  
+  /* 3D effect utilities */
+  .hover-3d {
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+  }
+  
+  .hover-3d:hover {
+    transform: translateY(-5px) rotateX(5deg);
+  }
+  
+  /* Gradient text utilities */
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .gradient-purple {
+    background-image: linear-gradient(to right, #c084fc, #a855f7, #7e22ce);
+  }
+}
