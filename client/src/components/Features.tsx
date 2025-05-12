@@ -20,19 +20,19 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="text-center p-6 hover:shadow-lg rounded-lg transition duration-300"
+              className="text-center p-6 hover:shadow-lg rounded-lg transition duration-300 dark:hover:bg-gray-800"
             >
               <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold font-heading mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <h3 className="text-xl font-bold font-heading mb-2 dark:text-white">{feature.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
             </div>
           ))}
         </div>

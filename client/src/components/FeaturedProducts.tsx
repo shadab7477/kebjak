@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import { ShoppingCart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const FeaturedProducts = () => {
@@ -37,12 +36,12 @@ const FeaturedProducts = () => {
   ];
 
   return (
-    <section className="py-16 bg-slate-50">
+    <section className="py-16 bg-slate-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold font-heading">Featured Products</h2>
+          <h2 className="text-3xl font-bold font-heading dark:text-white">Featured Products</h2>
           <Link href="/shop">
-            <a className="text-primary font-medium flex items-center">
+            <a className="text-primary font-medium flex items-center dark:text-primary">
               <span>View All</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -53,7 +52,7 @@ const FeaturedProducts = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden group">
+            <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img 
                   src={product.image} 
@@ -70,17 +69,18 @@ const FeaturedProducts = () => {
                   </div>
                 )}
               </div>
-              <div className="p-4">
-                <h3 className="font-bold text-lg mb-2">{product.name}</h3>
-                <p className="text-gray-600 text-sm mb-3">{product.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="font-bold text-primary">{product.price}</span>
-                  <button 
-                    className="bg-secondary text-white p-2 rounded-full hover:bg-opacity-90 transition"
-                    aria-label={`Add ${product.name} to cart`}
+              <div className="p-4 flex flex-col h-48">
+                <h3 className="font-bold text-lg mb-2 dark:text-white">{product.name}</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 flex-grow">{product.description}</p>
+                <div className="flex justify-center items-center mt-auto">
+                  <a 
+                    href="https://www.facebook.com/kenjacreations" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm text-primary dark:text-primary transition-all duration-300 hover:text-primary-dark hover:font-medium hover:scale-105 px-3 py-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-gray-700"
                   >
-                    <ShoppingCart size={18} />
-                  </button>
+                    Contact on Facebook
+                  </a>
                 </div>
               </div>
             </div>

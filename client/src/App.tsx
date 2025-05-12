@@ -7,6 +7,7 @@ import { lazy, Suspense } from "react";
 import FloatingNavbar from "@/components/FloatingNavbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 // Import Home page normally for fast initial load
 import Home from "@/pages/Home";
@@ -15,7 +16,6 @@ import Home from "@/pages/Home";
 const About = lazy(() => import("@/pages/About"));
 const Shop = lazy(() => import("@/pages/Shop"));
 const Gallery = lazy(() => import("@/pages/Gallery"));
-const Testimonials = lazy(() => import("@/pages/Testimonials"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 // Loading fallback component
@@ -33,7 +33,6 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/shop" component={Shop} />
         <Route path="/gallery" component={Gallery} />
-        <Route path="/testimonials" component={Testimonials} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
@@ -43,13 +42,15 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <ScrollToTop />
-        <FloatingNavbar />
-        <Router />
-        <Footer />
-        <Toaster />
-      </TooltipProvider>
+      <ThemeProvider>
+        <TooltipProvider>
+          <ScrollToTop />
+          <FloatingNavbar />
+          <Router />
+          <Footer />
+          <Toaster />
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

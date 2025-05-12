@@ -5,9 +5,9 @@ import {
   IconHome, 
   IconInfoCircle, 
   IconShoppingBag, 
-  IconPhoto, 
-  IconStar 
+  IconPhoto 
 } from "@tabler/icons-react";
+import ThemeToggle from "./ThemeToggle";
 
 export function FloatingNavbar() {
   const navItems = [
@@ -31,11 +31,6 @@ export function FloatingNavbar() {
       link: "/gallery",
       icon: <IconPhoto className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
-    {
-      name: "Testimonials",
-      link: "/testimonials",
-      icon: <IconStar className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
     // Contact link removed
   ];
   
@@ -44,6 +39,7 @@ export function FloatingNavbar() {
       <FloatingNav 
         navItems={navItems} 
         className="bg-white/90 backdrop-blur-md border-neutral-200 dark:border-white/[0.2] dark:bg-black/60"
+        rightContent={<ThemeToggle />}
       />
     </div>
   );

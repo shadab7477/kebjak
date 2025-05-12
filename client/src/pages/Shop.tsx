@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Helmet } from "react-helmet";
-import { Filter, MessageCircle } from "lucide-react";
+import { Filter } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
 
 interface Product {
@@ -143,11 +142,11 @@ const Shop = () => {
       </Helmet>
 
       
-      <main className="pt-32 pb-12">
+      <main className="pt-32 pb-12 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold font-heading mb-4">Shop Our Creations</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h1 className="text-4xl font-bold font-heading mb-4 dark:text-white">Shop Our Creations</h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Discover our wide range of personalized products including mugs, face masks, t-shirts, and bottles - perfect for gifts or personal use.
             </p>
           </div>
@@ -159,8 +158,8 @@ const Shop = () => {
               onValueChange={setActiveCategory}
             >
               <div className="flex items-center mb-6">
-                <Filter className="mr-2 text-gray-500" size={20} />
-                <h2 className="text-lg font-medium">Filter by Category:</h2>
+                <Filter className="mr-2 text-gray-500 dark:text-gray-400" size={20} />
+                <h2 className="text-lg font-medium dark:text-white">Filter by Category:</h2>
               </div>
               <TabsList className="mb-8 flex flex-wrap">
                 <TabsTrigger value="all">All Products</TabsTrigger>
@@ -173,13 +172,13 @@ const Shop = () => {
               <TabsContent value={activeCategory} className="mt-0">
                 {filteredProducts.length === 0 ? (
                   <div className="text-center py-12">
-                    <h3 className="text-xl font-medium mb-2">No products found</h3>
-                    <p className="text-gray-500">Try selecting a different category</p>
+                    <h3 className="text-xl font-medium mb-2 dark:text-white">No products found</h3>
+                    <p className="text-gray-500 dark:text-gray-400">Try selecting a different category</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {filteredProducts.map((product) => (
-                      <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden group">
+                      <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden group">
                         <div className="relative overflow-hidden">
                           <img 
                             src={`${product.image}`}
@@ -203,19 +202,18 @@ const Shop = () => {
                             </div>
                           )}
                         </div>
-                        <div className="p-4">
-                          <h3 className="font-bold text-lg mb-2">{product.name}</h3>
-                          <p className="text-gray-600 text-sm mb-3">{product.description}</p>
-                          <div className="flex justify-between items-center">
-                            <a href="https://www.facebook.com/kenjacreations" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">Contact on Facebook</a>
-                            <Button 
-                              size="icon"
-                              variant="secondary"
-                              onClick={() => window.open('https://m.me/kenjacreations', '_blank')}
-                              aria-label={`Message about ${product.name}`}
+                        <div className="p-4 flex flex-col h-48">
+                          <h3 className="font-bold text-lg mb-2 dark:text-white">{product.name}</h3>
+                          <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 flex-grow">{product.description}</p>
+                          <div className="flex justify-center items-center mt-auto">
+                            <a 
+                              href="https://www.facebook.com/kenjacreations" 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="text-sm text-primary dark:text-primary transition-all duration-300 hover:text-primary-dark hover:font-medium hover:scale-105 px-3 py-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-gray-700"
                             >
-                              <MessageCircle size={18} />
-                            </Button>
+                              Contact on Facebook
+                            </a>
                           </div>
                         </div>
                       </div>

@@ -13,9 +13,11 @@ type NavItem = {
 export const FloatingNav = ({
   navItems,
   className,
+  rightContent,
 }: {
   navItems: NavItem[];
   className?: string;
+  rightContent?: React.ReactNode;
 }) => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
@@ -74,6 +76,11 @@ export const FloatingNav = ({
           </Link>
         ))}
         </div>
+        {rightContent && (
+          <div className="flex items-center ml-4">
+            {rightContent}
+          </div>
+        )}
       </motion.div>
     </AnimatePresence>
   );

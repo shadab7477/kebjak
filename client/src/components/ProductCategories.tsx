@@ -23,11 +23,11 @@ const ProductCategories = () => {
   ];
 
   return (
-    <section id="shop" className="py-16 bg-white">
+    <section id="shop" className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold font-heading mb-4">Custom Designed Products</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold font-heading mb-4 dark:text-white">Custom Designed Products</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Discover our wide range of custom designed products for weddings, reunions, baby reveals, and special occasions. We specialize in t-shirts, mugs, face masks, and more crafty items.
           </p>
         </div>

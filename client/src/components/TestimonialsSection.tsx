@@ -60,12 +60,12 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonials" className="py-16 bg-secondary bg-opacity-10">
+    <section id="testimonials" className="py-16 bg-secondary bg-opacity-10 dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold font-heading mb-4">What Our Customers Say</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Hear from our satisfied customers about their experience with Kenjac’ Creations.
+          <h2 className="text-3xl font-bold font-heading mb-4 dark:text-white">What Our Customers Say</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Hear from our satisfied customers about their experience with Kenjac' Creations.
           </p>
         </div>
         

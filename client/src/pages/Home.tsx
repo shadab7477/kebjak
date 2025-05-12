@@ -16,12 +16,12 @@ const SectionLoading = () => (
     <div className="container mx-auto px-4">
       <div className="flex justify-center">
         <div className="animate-pulse w-full max-w-3xl">
-          <div className="h-8 bg-gray-200 rounded-md mb-6 w-1/3 mx-auto"></div>
-          <div className="h-4 bg-gray-200 rounded-md mb-4 w-2/3 mx-auto"></div>
-          <div className="h-4 bg-gray-200 rounded-md mb-8 w-1/2 mx-auto"></div>
+          <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded-md mb-6 w-1/3 mx-auto"></div>
+          <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded-md mb-4 w-2/3 mx-auto"></div>
+          <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded-md mb-8 w-1/2 mx-auto"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-gray-200 rounded-lg h-48"></div>
+              <div key={i} className="bg-gray-200 dark:bg-gray-700 rounded-lg h-48"></div>
             ))}
           </div>
         </div>
@@ -76,7 +76,7 @@ const Home = () => {
       <main itemScope itemType="https://schema.org/WebPage">
         <Hero />
         <Features />
-        <section id="about" className="py-16 bg-slate-50" itemScope itemType="https://schema.org/AboutPage">
+        <section id="about" className="py-16 bg-slate-50 dark:bg-gray-900" itemScope itemType="https://schema.org/AboutPage">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="md:w-1/2">
@@ -89,23 +89,23 @@ const Home = () => {
                 />
               </div>
               <div className="md:w-1/2">
-                <h2 className="text-3xl font-bold font-heading mb-6" itemProp="headline">
+                <h2 className="text-3xl font-bold font-heading mb-6 dark:text-white" itemProp="headline">
                   About <span className="text-primary">Kenjac' Creations</span>
                 </h2>
                 <div itemProp="description">
-                  <p className="text-lg mb-6 leading-relaxed">
+                  <p className="text-lg mb-6 leading-relaxed dark:text-gray-300">
                     Kenjac' Creations was born from a passion for bringing joy through handcrafted art. 
                     We specialize in creating personalized gifts and event decorations that help make 
                     your special moments truly memorable.
                   </p>
-                  <p className="text-lg mb-8 leading-relaxed">
+                  <p className="text-lg mb-8 leading-relaxed dark:text-gray-300">
                     With attention to detail and a commitment to quality, every creation is crafted 
                     with love and care. We believe in turning your vision into reality and adding a 
                     touch of magic to your celebrations.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/about" className="text-primary font-medium flex items-center" aria-label="Read more about Kenjac' Creations story">
+                  <a href="/about" className="text-primary font-medium flex items-center dark:text-primary" aria-label="Read more about Kenjac' Creations story">
                     <span>Read Our Story</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -129,11 +129,11 @@ const Home = () => {
               <FeaturedProducts />
             </Suspense>
             
-            <section id="gallery" className="py-16 bg-white" itemScope itemType="https://schema.org/ImageGallery">
+            <section id="gallery" className="py-16 bg-white dark:bg-gray-900" itemScope itemType="https://schema.org/ImageGallery">
               <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold font-heading mb-4" itemProp="name">Our Gallery</h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto" itemProp="description">
+                  <h2 className="text-3xl font-bold font-heading mb-4 dark:text-white" itemProp="name">Our Gallery</h2>
+                  <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto" itemProp="description">
                     Browse through our collection of previously completed projects and get inspired for your next celebration.
                   </p>
                 </div>
@@ -151,7 +151,7 @@ const Home = () => {
                 </div>
                 
                 <div className="text-center mt-8">
-                  <a href="/gallery" className="inline-block bg-primary hover:bg-opacity-90 text-white font-medium px-6 py-3 rounded-full transition" aria-label="View all gallery projects">
+                  <a href="/gallery" className="inline-block bg-primary hover:bg-opacity-90 text-white font-medium px-6 py-3 rounded-full transition dark:bg-primary dark:hover:bg-opacity-90" aria-label="View all gallery projects">
                     View All Projects
                   </a>
                 </div>

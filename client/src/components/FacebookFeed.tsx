@@ -32,12 +32,12 @@ const FacebookFeed = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-10">
           <div>
-            <h2 className="text-3xl font-bold font-heading">Connect With Us</h2>
-            <p className="text-lg text-gray-600 mt-2">
+            <h2 className="text-3xl font-bold font-heading dark:text-white">Connect With Us</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mt-2">
               Follow our Facebook page for the latest updates and behind-the-scenes content
             </p>
           </div>
@@ -54,22 +54,22 @@ const FacebookFeed = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {facebookPosts.map((post, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="p-4 border-b">
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="p-4 border-b dark:border-gray-700">
                 <div className="flex items-center">
                   <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white">
                     <FaFacebook className="text-xl" />
                   </div>
                   <div className="ml-3">
-                    <p className="font-semibold">Kenjac' Creations</p>
-                    <p className="text-xs text-gray-500">{post.date}</p>
+                    <p className="font-semibold dark:text-white">Kenjac' Creations</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{post.date}</p>
                   </div>
                 </div>
               </div>
               
               <div className="p-4">
-                <h3 className="font-bold text-lg mb-2">{post.title}</h3>
-                <p className="text-gray-700 mb-4">{post.description}</p>
+                <h3 className="font-bold text-lg mb-2 dark:text-white">{post.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">{post.description}</p>
               </div>
               
               <img 
@@ -78,21 +78,21 @@ const FacebookFeed = () => {
                 className="w-full h-64 object-cover"
               />
               
-              <div className="p-4 border-t">
-                <div className="flex justify-between text-gray-500 mb-2">
+              <div className="p-4 border-t dark:border-gray-700">
+                <div className="flex justify-between text-gray-500 dark:text-gray-400 mb-2">
                   <span className="flex items-center"><FaHeart className="text-red-500 mr-1" /> {post.likes}</span>
                   <span>{post.comments} comments • {post.shares} shares</span>
                 </div>
                 
-                <div className="flex border-t pt-2">
-                  <button className="flex-1 flex items-center justify-center py-1 hover:bg-gray-100 rounded-md">
-                    <FaHeart className="mr-2 text-gray-500" /> Like
+                <div className="flex border-t dark:border-gray-700 pt-2">
+                  <button className="flex-1 flex items-center justify-center py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md dark:text-gray-300">
+                    <FaHeart className="mr-2 text-gray-500 dark:text-gray-400" /> Like
                   </button>
-                  <button className="flex-1 flex items-center justify-center py-1 hover:bg-gray-100 rounded-md">
-                    <FaComment className="mr-2 text-gray-500" /> Comment
+                  <button className="flex-1 flex items-center justify-center py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md dark:text-gray-300">
+                    <FaComment className="mr-2 text-gray-500 dark:text-gray-400" /> Comment
                   </button>
-                  <button className="flex-1 flex items-center justify-center py-1 hover:bg-gray-100 rounded-md">
-                    <FaShare className="mr-2 text-gray-500" /> Share
+                  <button className="flex-1 flex items-center justify-center py-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md dark:text-gray-300">
+                    <FaShare className="mr-2 text-gray-500 dark:text-gray-400" /> Share
                   </button>
                 </div>
               </div>
