@@ -25,9 +25,9 @@ const Footer = () => {
   };
   
   return (
-    <footer className="relative mt-8">
+    <footer className="relative mt-8 z-10">
       {/* Decorative wave top */}
-      <div className="absolute top-0 left-0 right-0 transform -translate-y-full">
+      <div className="absolute top-0 left-0 right-0 transform -translate-y-full pointer-events-none">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
           <path fill="#495057" fillOpacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,208C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
@@ -97,11 +97,11 @@ const Footer = () => {
               </h3>
               <ul className="space-y-3">
                 {[
-                  { href: "/shop?category=gifts", label: "Customized Gifts" },
-                  { href: "/shop?category=decorations", label: "Event Decorations" },
-                  { href: "/shop?category=home", label: "Home Decor" },
-                  { href: "/shop?category=seasonal", label: "Seasonal Items" },
-                  { href: "/shop?category=corporate", label: "Corporate Gifts" }
+                  { href: "/shop?category=mugs", label: "Mugs" },
+                  { href: "/shop?category=facemasks", label: "Face Masks" },
+                  { href: "/shop?category=tshirts", label: "T-Shirts" },
+                  { href: "/shop?category=cans", label: "Personalized Cans" },
+                  { href: "/shop", label: "All Products" }
                 ].map((link) => (
                   <li key={link.href} className="transform hover:translate-x-2 transition-transform duration-300">
                     <Link href={link.href}>
@@ -118,29 +118,27 @@ const Footer = () => {
             {/* Contact section removed */}
           </div>
           
-          {/* Newsletter */}
+          {/* Facebook Follow Button */}
           <div className="bg-gray-900/50 rounded-xl p-6 mb-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-centre">
               <div className="md:col-span-1">
-                <h4 className="text-lg font-bold mb-1">Subscribe to our newsletter</h4>
-                <p className="text-gray-400 text-sm">Get the latest updates and offers</p>
+                <h4 className="text-lg font-bold mb-1">Connect with us</h4>
+                <p className="text-gray-400 text-sm">Follow us for updates and offers</p>
               </div>
-              <div className="md:col-span-2">
-                <form className="flex flex-col sm:flex-row gap-3">
-                  <input 
-                    type="email" 
-                    placeholder="Your email address" 
-                    className="bg-gray-800 text-white rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-primary flex-grow"
-                    required
-                  />
-                  <AnimatedButton
-                    type="submit"
-                    className="font-medium px-6 py-3"
-                    primaryColor="#FF6B6B"
-                  >
-                    Subscribe
-                  </AnimatedButton>
-                </form>
+              <div className="md:col-span-2 flex justify-end">
+                <a 
+                  href="https://www.facebook.com/kenjacreations" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group transition-all duration-300 transform hover:scale-105"
+                >
+                  <div className="bg-[#1877F2] hover:bg-[#0e6edf] text-white font-medium rounded-full px-8 py-3.5 flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div className="bg-white p-2 rounded-full">
+                      <Facebook size={20} className="text-[#1877F2]" />
+                    </div>
+                    <span>Follow on Facebook</span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -150,9 +148,15 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-sm text-gray-400 mb-4 md:mb-0">&copy; {new Date().getFullYear()} Kenjac’ Creations. All rights reserved.</p>
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                <a href="/privacy-policy" className="text-sm text-gray-400 hover:text-primary transition-colors duration-300">Privacy Policy</a>
-                <a href="/terms" className="text-sm text-gray-400 hover:text-primary transition-colors duration-300">Terms of Service</a>
-                <a href="/shipping" className="text-sm text-gray-400 hover:text-primary transition-colors duration-300">Shipping & Returns</a>
+                <Link href="/">
+                  <a className="text-sm text-gray-400 hover:text-primary transition-colors duration-300">Privacy Policy</a>
+                </Link>
+                <Link href="/">
+                  <a className="text-sm text-gray-400 hover:text-primary transition-colors duration-300">Terms of Service</a>
+                </Link>
+                <Link href="/">
+                  <a className="text-sm text-gray-400 hover:text-primary transition-colors duration-300">Shipping & Returns</a>
+                </Link>
               </div>
             </div>
           </div>

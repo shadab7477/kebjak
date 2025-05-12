@@ -13,7 +13,7 @@ const CTASection = () => {
             href="https://www.facebook.com/kenjacreations" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="bg-white text-primary hover:bg-opacity-90 font-medium px-8 py-3 rounded-full transition text-center cursor-pointer"
+            className="bg-white text-primary hover:bg-opacity-90 font-medium px-8 py-3 rounded-full transition text-center cursor-pointer hover:cursor-pointer transform hover:scale-105 duration-300"
           >
             Start Your Custom Order
           </a>
@@ -21,7 +21,7 @@ const CTASection = () => {
             href="https://www.facebook.com/kenjacreations" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="bg-transparent border-2 border-white hover:bg-white hover:text-primary font-medium px-8 py-3 rounded-full transition text-center cursor-pointer"
+            className="bg-transparent border-2 border-white hover:bg-white hover:text-primary font-medium px-8 py-3 rounded-full transition text-center cursor-pointer hover:cursor-pointer transform hover:scale-105 duration-300"
           >
             Contact Us
           </a>

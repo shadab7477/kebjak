@@ -117,27 +117,34 @@ const Gallery = () => {
             </TabsContent>
           </Tabs>
           
-          <div className="text-center mt-12">
-            <p className="text-lg mb-6">
-              Inspired by what you see? Let us create something special for your next event or as a gift!
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a 
-                href="https://www.facebook.com/kenjacreations" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary hover:bg-opacity-90 text-white font-medium px-8 py-3 rounded-full transition text-center cursor-pointer"
-              >
-                Request a Custom Order
-              </a>
-              <a 
-                href="https://www.facebook.com/kenjacreations" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium px-8 py-3 rounded-full transition text-center cursor-pointer"
-              >
-                Contact Us
-              </a>
+          <div className="bg-gray-50 rounded-xl p-8 mt-16 shadow-lg">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-3 text-gray-800">Ready for Something Custom?</h3>
+              <p className="text-lg mb-8 text-gray-600 max-w-2xl mx-auto">
+                Inspired by our creations? Let us design something unique for your special occasion or as a memorable gift!
+              </p>
+              
+              <div className="flex flex-col sm:flex-row justify-center gap-6">
+                <a 
+                  href="https://www.facebook.com/messages/t/kenjacreations" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-medium px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-xl cursor-pointer"
+                >
+                  <span className="mr-2">🎨</span>
+                  <span>Request a Custom Order</span>
+                </a>
+                
+                <a 
+                  href="https://www.facebook.com/kenjacreations" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-xl cursor-pointer"
+                >
+                  <span className="mr-2">💬</span>
+                  <span>Contact Us</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
