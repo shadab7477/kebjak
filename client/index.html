@@ -9,9 +9,66 @@
     <meta name="author" content="Kenjac' Creations" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://kenjaccreations.com" />
+    
+    <!-- Resource hints for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preconnect" href="https://scontent.fblr18-1.fna.fbcdn.net" crossorigin>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=10&w=20&auto=format&fit=crop&blur=10" as="image" fetchpriority="high">
+    <link rel="preload" href="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=400&auto=format&fit=crop&fm=webp" as="image" type="image/webp" fetchpriority="high">
+    
+    <!-- Add critical CSS inline -->
+    <style>
+      /* Critical CSS for hero section */
+      .hero-image {
+        object-fit: cover;
+        object-position: left top;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        inset: 0;
+      }
+      
+      .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: .5;
+        }
+      }
+
+      /* Add font-display swap for better performance */
+      @font-face {
+        font-family: 'Montserrat';
+        font-display: swap;
+        src: local('Montserrat');
+      }
+      @font-face {
+        font-family: 'Nunito';
+        font-display: swap;
+        src: local('Nunito');
+      }
+      @font-face {
+        font-family: 'Playfair Display';
+        font-display: swap;
+        src: local('Playfair Display');
+      }
+    </style>
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    </noscript>
+
     <!-- Open Graph tags for better social sharing -->
     <meta property="og:title" content="Kenjac' Creations - Handcrafted Custom Gifts & Event Decorations" />
     <meta property="og:description" content="Premium handcrafted customized gifts, unique event decorations, and personalized creations for weddings, birthdays, and all special occasions." />
@@ -19,19 +76,13 @@
     <meta property="og:url" content="https://kenjaccreations.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Kenjac' Creations" />
+    
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kenjac' Creations - Handcrafted Custom Gifts & Event Decorations">
     <meta name="twitter:description" content="Premium handcrafted customized gifts, unique event decorations, and personalized creations for weddings, birthdays, and all special occasions.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=630">
     
-    <!-- Resource hints for faster loading -->
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-    <link rel="preconnect" href="https://scontent.fblr18-1.fna.fbcdn.net" crossorigin>
-    
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/src/components/Hero.tsx" as="script" fetchpriority="high">
-    <link rel="preload" href="/src/components/Features.tsx" as="script" fetchpriority="high">
     <!-- JSON-LD structured data for rich search results -->
     <script type="application/ld+json">
     {
@@ -73,8 +124,9 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+    <!-- Defer non-critical JavaScript -->
+    <script type="module" src="/src/main.tsx" defer></script>
+    <!-- Load replit banner script with low priority -->
+    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" async></script>
   </body>
 </html>
