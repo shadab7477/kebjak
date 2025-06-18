@@ -10,80 +10,43 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://kenjaccreations.com" />
     
-    <!-- Resource hints for faster loading -->
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link rel="preconnect" href="https://scontent.fblr18-1.fna.fbcdn.net" crossorigin>
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=10&w=20&auto=format&fit=crop&blur=10" as="image" fetchpriority="high">
-    <link rel="preload" href="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=400&auto=format&fit=crop&fm=webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/src/main.tsx" as="script" fetchpriority="high">
+    <link rel="preload" href="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=400&auto=format&fit=crop&fm=webp" as="image" imagesrcset="400w 400w, 800w 800w" imagesizes="(max-width: 600px) 400px, 800px" fetchpriority="high">
     
-    <!-- Add critical CSS inline -->
-    <style>
-      /* Critical CSS for hero section */
-      .hero-image {
-        object-fit: cover;
-        object-position: left top;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        inset: 0;
-      }
-      
-      .animate-pulse {
-        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-      }
-      
-      @keyframes pulse {
-        0%, 100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: .5;
-        }
-      }
-
-      /* Add font-display swap for better performance */
-      @font-face {
-        font-family: 'Montserrat';
-        font-display: swap;
-        src: local('Montserrat');
-      }
-      @font-face {
-        font-family: 'Nunito';
-        font-display: swap;
-        src: local('Nunito');
-      }
-      @font-face {
-        font-family: 'Playfair Display';
-        font-display: swap;
-        src: local('Playfair Display');
-      }
+    <!-- Inline critical CSS -->
+    <style id="critical-css">
+      /* Minimal critical CSS for initial render */
+      html{scroll-behavior:smooth}
+      body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+      #root{min-height:100vh;display:flex;flex-direction:column}
+      .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top}
+      @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+      .animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,0.6,1) infinite}
     </style>
     
-    <!-- Defer non-critical CSS -->
+    <!-- Load fonts asynchronously -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    </noscript>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"></noscript>
 
-    <!-- Open Graph tags for better social sharing -->
+    <!-- Social meta tags -->
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Kenjac' Creations - Handcrafted Custom Gifts & Event Decorations" />
     <meta property="og:description" content="Premium handcrafted customized gifts, unique event decorations, and personalized creations for weddings, birthdays, and all special occasions." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=630" />
     <meta property="og:url" content="https://kenjaccreations.com" />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=630" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Kenjac' Creations" />
+    <meta name="twitter:card" content="summary_large_image" />
     
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kenjac' Creations - Handcrafted Custom Gifts & Event Decorations">
-    <meta name="twitter:description" content="Premium handcrafted customized gifts, unique event decorations, and personalized creations for weddings, birthdays, and all special occasions.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=630">
-    
-    <!-- JSON-LD structured data for rich search results -->
+    <!-- Structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -92,7 +55,6 @@
       "image": "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=630",
       "description": "Premium handcrafted customized gifts, unique event decorations, and personalized creations for weddings, birthdays, and all special occasions.",
       "url": "https://kenjaccreations.com",
-      "priceRange": "$$",
       "telephone": "+1-555-555-5555",
       "address": {
         "@type": "PostalAddress",
@@ -102,19 +64,6 @@
         "postalCode": "90210",
         "addressCountry": "US"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "34.0522",
-        "longitude": "-118.2437"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "17:00"
-        }
-      ],
       "sameAs": [
         "https://www.facebook.com/kenjaccreations",
         "https://www.instagram.com/kenjaccreations"
@@ -124,9 +73,31 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Defer non-critical JavaScript -->
-    <script type="module" src="/src/main.tsx" defer></script>
-    <!-- Load replit banner script with low priority -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" async></script>
+    
+    <!-- Load main script with defer -->
+    <script src="/src/main.tsx" type="module" defer></script>
+    
+    <!-- Load non-essential scripts after DOM content loads -->
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        // Load Replit banner script
+        var replitScript = document.createElement('script');
+        replitScript.src = 'https://replit.com/public/js/replit-dev-banner.js';
+        replitScript.async = true;
+        document.body.appendChild(replitScript);
+        
+        // Load full CSS (non-critical)
+        var fullCSS = document.createElement('link');
+        fullCSS.rel = 'stylesheet';
+        fullCSS.href = '/src/styles/main.css';
+        document.head.appendChild(fullCSS);
+        
+        // Load remaining fonts
+        var fontCSS = document.createElement('link');
+        fontCSS.rel = 'stylesheet';
+        fontCSS.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap';
+        document.head.appendChild(fontCSS);
+      });
+    </script>
   </body>
 </html>

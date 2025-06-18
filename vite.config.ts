@@ -63,10 +63,10 @@ export default defineConfig({
         }
       }
     },
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 2000,
     sourcemap: false,
     cssCodeSplit: true,
-    assetsInlineLimit: 4096,
+    assetsInlineLimit: 6096,
     target: 'esnext'
   },
   server: {
